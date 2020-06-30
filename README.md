@@ -13,3 +13,12 @@ This repository consists of in three parts
 lung data from unified dataset as discussed in the paper
 
 See *Readme.md* in each folder for a detailed description of the specific workflow
+
+# Run
+You can simply create a Docker container with all dependencies installed
+
+```bash
+docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it docker.pkg.github.com/fvalle1/cancers/topic:latest
+```
+
+then point your browser to [localhost](localhost:8888)
