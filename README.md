@@ -1,3 +1,5 @@
+![Docker Image CI](https://github.com/fvalle1/cancers/workflows/Docker%20Image%20CI/badge.svg)
+
 # A Topic model analysis
 Notebooks for work "A Topic model analysis of TCGA transcriptomic data" submitted to Cancers [link]()
 
