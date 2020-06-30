@@ -1,0 +1,13 @@
+gobject
+matplotlib
+pandas
+jupyter
+cairocffi
+scanpy
+tensorflow
+watermark
+gseapy
+sklearn
+seaborn
+scipy
+numpy
