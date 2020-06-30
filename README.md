@@ -9,7 +9,7 @@ This repository consists of in three parts
 ## lung
 [lung](lung) analysis, stochastic block modelling and predictor
 
-## merged lung
+## unified lung
 lung data from unified dataset as discussed in the paper
 
 See *Readme.md* in each folder for a detailed description of the specific workflow
