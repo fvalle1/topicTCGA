@@ -16,6 +16,10 @@ lung data from unified dataset as discussed in the paper
 
 See *Readme.md* in each folder for a detailed description of the specific workflow
 
+## tree plotter
+
+A submodule useful to plot hierarchies
+
 # Run
 You can simply create a Docker container with all dependencies installed
 
