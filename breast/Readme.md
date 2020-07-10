@@ -9,6 +9,8 @@ Run [breast.ipynb](breast.ipynb) to preprocess data
 
 Go trough [predictor_BRCA.ipynb](predictor_BRCA.ipynb) to execute the predictor discussed in the paper, this can be run on Colab on in any machine with tensorflow (possibly with GPU enabled)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Rhg4Wpx80OpP-t9c7Nb6W1DioZhy_kZ6/view?usp=sharing]
+
 [model_Subtype_Selected_Lum.h5](model_Subtype_Selected_Lum.h5) contains the trained weights, load it using
 ```python
 from tensorflow.keras.models import load_model
