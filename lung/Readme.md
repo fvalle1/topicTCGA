@@ -8,7 +8,7 @@ gdc-client download -m manifest.txt
 Run [lung.ipynb](lung.ipynb) to preprocess data
 
 Go trough [predictor_LUAD_LUSC.ipynb](predictor_LUAD_LUSC.ipynb) to execute the predictor discussed in the paper, this can be run on Colab or in any machine with tensorflow (possibly with GPU enabled)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://drive.google.com/file/d/1shlI-lwfH32ka9MrZ5gBCoiZrOV0YvWy/view?usp=sharing]
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://drive.google.com/file/d/1shlI-lwfH32ka9MrZ5gBCoiZrOV0YvWy/view?usp=sharing)
 
 [model_cancer.type.h5](model_cancer.type.h5) contains the trained weights.
 To reproduce our evaluation analyses load it using
