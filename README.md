@@ -6,15 +6,15 @@ Notebooks for work "A Topic model analysis of TCGA transcriptomic data" submitte
 This repository consists of in three parts
 
 ## breast
-[breast](breast) analysis, stochastic block modelling and predictor
+[breast](breast) analyses, stochastic block modelling and predictor
 
 ## lung
-[lung](lung) analysis, stochastic block modelling and predictor
+[lung](lung) analyses, stochastic block modelling, survival analysis and predictor
 
 ## unified lung
 lung data from unified dataset as discussed in the paper
 
-See *Readme.md* in each folder for a detailed description of the specific workflow
+See *Readme.md* in each folder for a detailed description of the specific pipeline
 
 ## tree plotter
 
@@ -27,4 +27,4 @@ You can simply create a Docker container with all dependencies installed
 docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it docker.pkg.github.com/fvalle1/cancers/topic:latest
 ```
 
-then point your browser to [localhost](localhost:8888)
+then point your browser to [localhost](http://localhost:8888)
