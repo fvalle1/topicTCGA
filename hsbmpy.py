@@ -389,7 +389,7 @@ def define_labels(cluster, df_files, label='primary_site', verbose=False):
     return true_labels, predicted_labels
 
 
-def add_score_lines(ax, scores, labels=None, h=False, c=False, alpha=0.8, **kwargs):
+def add_score_lines(ax, scores, V="V", labels=None, h=False, c=False, alpha=0.8, **kwargs):
     '''
     add to ax lines in scores
     add homogeneity and completness if required by h and c
@@ -411,7 +411,9 @@ def add_score_lines(ax, scores, labels=None, h=False, c=False, alpha=0.8, **kwar
         'hierarchical': 'darkgreen',
         'lda': 'violet',
         'RPPA Clusters': 'red',
-        'wgcna': 'purple'
+        'wgcna': 'purple',
+        "Subtype_Selected": "red",
+        "BRCA_Subtype_PAM50": "blue"
     }
 
     for label in labels:
@@ -427,8 +429,8 @@ def add_score_lines(ax, scores, labels=None, h=False, c=False, alpha=0.8, **kwar
         if c:
             ax.plot(xl, scores[label]['c'], ls=':', c=colors[label], marker='<', lw=10, ms=45, alpha=alpha,
                     label='completness - %s' % label)
-        if len(scores[label]['V']) == len(xl):
-            ax.plot(xl, scores[label]['V'], label='%s' % label, ls='-', c=colors[label], marker='o', lw=20, ms=45,
+        if len(scores[label][V]) == len(xl):
+            ax.plot(xl, scores[label][V], label='%s' % label, ls='-', c=colors[label], marker='o', lw=20, ms=45,
                     **kwargs)
         else:
             raise(ValueError("xl has got wrong lenght"))
@@ -608,6 +610,19 @@ def get_scores(directory, labels, df_files=None, algorithm='topsbm', verbose=Fal
             except:
                 print(*sys.exc_info())
                 print("Skipping level ", l)
+
+        # add the first point where all sample are in the same cluster by definition
+        if xl[0] < xl[-1]:
+            idx = 0
+        else:
+            idx = len(xl)
+        true_labels, _ = define_labels(get_cluster_given_l(l, directory, algorithm), df_files, label=label)
+        predicted_labels = np.ones_like(true_labels)
+        scores[label]['h'].insert(idx,metrics.cluster.homogeneity_score(true_labels, predicted_labels))
+        scores[label]['c'].insert(idx,metrics.cluster.completeness_score(true_labels, predicted_labels))
+        scores[label]['V'].insert(idx,metrics.cluster.v_measure_score(true_labels, predicted_labels))
+        xl.insert(idx,len(np.unique(predicted_labels)))
+
         scores[label]['xl'] = xl
     if len(labels) >= 2:
         h = np.array(scores[labels[0]]['h'])
@@ -657,6 +672,19 @@ def get_scores_shuffled(directory, df_files, algorithm='topsbm', label='primary_
     except:
         print(*sys.exc_info())
         print("shuffled files not found")
+
+    # add the first point where all sample are in the same cluster by definition
+    if xl[0] < xl[-1]:
+        idx = 0
+    else:
+        idx = len(xl)
+    true_labels, _ = define_labels(get_cluster_given_l(l, directory, algorithm), df_files, label=label)
+    predicted_labels = np.ones_like(true_labels)
+    scores['h'].insert(idx,metrics.cluster.homogeneity_score(true_labels, predicted_labels))
+    scores['c'].insert(idx,metrics.cluster.completeness_score(true_labels, predicted_labels))
+    scores['V'].insert(idx,metrics.cluster.v_measure_score(true_labels, predicted_labels))
+    xl.insert(idx,len(np.unique(predicted_labels)))
+
     scores['xl'] = xl
     return scores
 
@@ -727,21 +755,18 @@ def clusteranalysis(directory, labels, algorithm='topsbm'):
                 print(normalise, label, level)
                 try:
                     cluster = get_cluster_given_l(level, directory,algorithm=algorithm)
-                    if len(cluster.keys()) > 1000:
-                        continue
                     fraction_sites = get_fraction_sites(cluster,df_files=df_files,label=label, normalise=normalise)
 
                     clustersinfo = get_clustersinfo(cluster,fraction_sites)
                     plot_cluster_composition(fraction_sites,directory,level,label=label, normalise=normalise,algorithm=algorithm)
-                    #make_heatmap(fraction_sites, directory, label, level, normalise=normalise,algorithm=algorithm)
+                    make_heatmap(fraction_sites, directory, label, level, normalise=normalise,algorithm=algorithm)
 
                     clustersinfo = get_clustersinfo(cluster,fraction_sites)
                     if not normalise:
-                        #plot_maximum(clustersinfo,cluster,label,level, directory,algorithm=algorithm)
-                        #plot_maximum_size(clustersinfo,label,level, directory,algorithm=algorithm)
-                        #plot_maximum_label(clustersinfo,label,level, directory,algorithm=algorithm)
-                        #plot_sizes(level,directory, algorithm=algorithm)
-                        pass
+                        plot_maximum(clustersinfo,cluster,label,level, directory,algorithm=algorithm)
+                        plot_maximum_size(clustersinfo,label,level, directory,algorithm=algorithm)
+                        plot_maximum_label(clustersinfo,label,level, directory,algorithm=algorithm)
+                        plot_sizes(level,directory, algorithm=algorithm)
                 except:
                     print(*sys.exc_info())
                 continue
@@ -750,11 +775,10 @@ def clusteranalysis(directory, labels, algorithm='topsbm'):
                 clustersinfo_shuffle = get_clustersinfo(cluster, fraction_sites_shuffle)
                 plot_cluster_composition(fraction_sites_shuffle,directory,level, label=label, shuffled=True, normalise=normalise, algorithm=algorithm)
                 if not normalise:
-                    #plot_maximum(clustersinfo,cluster,label,level,directory,clustersinfo_shuffle,algorithm=algorithm)
-                    #plot_maximum_size(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
-                    #plot_maximum_label(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
-                    #plot_labels_size(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
-                    pass
+                    plot_maximum(clustersinfo,cluster,label,level,directory,clustersinfo_shuffle,algorithm=algorithm)
+                    plot_maximum_size(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
+                    plot_maximum_label(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
+                    plot_labels_size(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
     ##define scores
     scores = get_scores(directory, labels)
     try:
@@ -797,11 +821,10 @@ def out_to_file(out, index, name='new_method', l=0):
 
 
 #normalise to hsbm
-def normalise_score(scores, base_algorithm="hsbm"):
-    for algorithm in scores.keys():
+def normalise_score(scores : dict, base_algorithm="hsbm", operation=lambda x,y: x/y, epsilon = 1e-6)->None:
+    "save scaled data to scores[norm_V]"
+    for algorithm in scores.keys(): #the first point is always constructed and np.interp wants sorted data so[:-1:-1]
         baseline = np.interp(scores[algorithm]["xl"],
-							 scores[base_algorithm]["xl"][::-1],
-							 scores[base_algorithm]["V"][::-1])
-        scores[algorithm]["norm_V"]=np.array(scores[algorithm]["V"])/baseline
-    for algorithm in scores.keys():
-        scores[algorithm]["V"]=scores[algorithm]["norm_V"]
+    					 scores[base_algorithm]["xl"][:-1][::-1],
+    					 scores[base_algorithm]["V"][:-1][::-1])
+        scores[algorithm]["norm_V"]=operation(np.array(scores[algorithm]["V"])+epsilon,baseline+epsilon)
