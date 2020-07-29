@@ -131,3 +131,5 @@ dmypy.json
 *.png
 *.scores
 *.DS_Store
+*.done
+*.err
