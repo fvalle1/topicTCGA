@@ -28,3 +28,6 @@ docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it docker.pkg.github.com
 ```
 
 then point your browser to [localhost](http://localhost:8888)
+
+# Analyse results
+To analyse results and reproduce plots in the paper run [hSBM_postprocess.ipynb](hSBM_postprocess.ipynb)
