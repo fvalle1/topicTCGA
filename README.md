@@ -1,9 +1,9 @@
 ![Docker Image CI](https://github.com/fvalle1/cancers/workflows/Docker%20Image%20CI/badge.svg)
 
-# A Topic model analysis
+# A Topic model analysis of TCGA transcriptomic data
 Notebooks for work "A Topic model analysis of TCGA transcriptomic data" submitted to Cancers [link]()
 
-This repository consists of in three parts
+This repository, following the paper, is divided into three parts
 
 ## breast
 [breast](breast) analyses, stochastic block modelling and predictor
@@ -30,4 +30,5 @@ docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it docker.pkg.github.com
 then point your browser to [localhost](http://localhost:8888)
 
 # Analyse results
-To analyse results and reproduce plots in the paper run [hSBM_postprocess.ipynb](hSBM_postprocess.ipynb)
+
+To analyse results and reproduce plots in the paper without rerunning hSBM use the following notebook [hSBM_postprocess.ipynb](hSBM_postprocess.ipynb)
