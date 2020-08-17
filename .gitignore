@@ -134,3 +134,4 @@ dmypy.json
 *.done
 *.err
 *.tsv
+*.pdf
