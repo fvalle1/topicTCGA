@@ -32,3 +32,6 @@ then point your browser to [localhost](http://localhost:8888)
 # Analyse results
 
 To analyse results and reproduce plots in the paper without rerunning hSBM use the following notebook [hSBM_postprocess.ipynb](hSBM_postprocess.ipynb)
+
+# License
+Please see [LICENSE](LICENSE)
