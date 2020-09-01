@@ -29,7 +29,7 @@ A submodule useful to plot hierarchies
 You can simply create a Docker container with all dependencies installed
 
 ```bash
-docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it docker.pkg.github.com/fvalle1/cancers/topic:latest
+docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it --name topic_tcga docker.pkg.github.com/fvalle1/cancers/topic:latest
 ```
 
 then point your browser to [localhost](http://localhost:8888)
