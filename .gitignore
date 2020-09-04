@@ -135,3 +135,6 @@ dmypy.json
 *.err
 *.tsv
 *.pdf
+unified_lung/data/
+*.csv
+*.dat
