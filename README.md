@@ -34,5 +34,11 @@ docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it --name topic_tcga doc
 
 then point your browser to [localhost](http://localhost:8888)
 
+# Data
+The data processed in our analysis when not available trough git ca ìn be accessed via [DataVersionControl](https://dvc.org)
+```bash
+dvc pull
+```
+
 # License
 Please see [LICENSE](LICENSE)
