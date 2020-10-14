@@ -8,7 +8,7 @@ Notebooks for work "A Topic model analysis of TCGA transcriptomic data" submitte
 To analyse results and reproduce plots in the paper without rerunning hSBM use the following notebook [hSBM_postprocess.ipynb](hSBM_postprocess.ipynb)
 
 
-This repository, following the structure of the paper, is divided into three parts
+This repository, following the structure of the paper, is divided into three parts. See *Readme.md* in each folder for a detailed description of the specific pipeline.
 
 ## breast
 [breast](breast) analyses, stochastic block modelling and predictor
@@ -19,7 +19,6 @@ This repository, following the structure of the paper, is divided into three par
 ## unified lung
 lung data from unified dataset as discussed in the paper
 
-See *Readme.md* in each folder for a detailed description of the specific pipeline
 
 ## tree plotter
 
