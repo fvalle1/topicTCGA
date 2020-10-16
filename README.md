@@ -9,7 +9,7 @@ Notebooks for work "A Topic model analysis of TCGA transcriptomic data" submitte
 To analyse results and reproduce plots in the paper without rerunning hSBM use the following notebook [hSBM_postprocess.ipynb](hSBM_postprocess.ipynb)
 
 
-This repository, following the paper, is divided into three parts
+This repository, following the structure of the paper, is divided into three parts. See *Readme.md* in each folder for a detailed description of the specific pipeline.
 
 ## breast
 [breast](breast) analyses, stochastic block modelling and predictor
@@ -20,7 +20,6 @@ This repository, following the paper, is divided into three parts
 ## unified lung
 lung data from unified dataset as discussed in the paper
 
-See *Readme.md* in each folder for a detailed description of the specific pipeline
 
 ## tree plotter
 
@@ -34,6 +33,12 @@ docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it --name topic_tcga doc
 ```
 
 then point your browser to [localhost](http://localhost:8888)
+
+# Data
+The data processed in our analysis when not available trough git can be accessed via [DataVersionControl](https://dvc.org)
+```bash
+dvc pull
+```
 
 # License
 Please see [LICENSE](LICENSE)
