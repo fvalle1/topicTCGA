@@ -2,7 +2,6 @@
 
 # A Topic model analysis of TCGA transcriptomic data
 Notebooks for work "A Topic model analysis of TCGA transcriptomic data" submitted to Cancers [link]()
-[![DOI](https://zenodo.org/badge/DOI/10.XXXX/XXXX.svg)](https://doi.org/)
 
 # Analyse results
 
@@ -20,7 +19,6 @@ This repository, following the structure of the paper, is divided into three par
 ## unified lung
 lung data from unified dataset as discussed in the paper
 
-
 ## tree plotter
 
 A submodule useful to plot hierarchies
@@ -33,6 +31,10 @@ docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it --name topic_tcga doc
 ```
 
 then point your browser to [localhost](http://localhost:8888)
+
+## hSBM_Topicmodel
+
+The [run_graph.ipynb](run_graph.ipynb) notebook can be used to run hierarchical Stochastic Block Modelling.
 
 # Data
 The data processed in our analysis when not available trough git can be accessed via [DataVersionControl](https://dvc.org)
