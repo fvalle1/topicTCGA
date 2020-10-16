@@ -2,6 +2,7 @@
 
 # A Topic model analysis of TCGA transcriptomic data
 Notebooks for work "A Topic model analysis of TCGA transcriptomic data" submitted to Cancers [link]()
+[![DOI](https://zenodo.org/badge/DOI/10.XXXX/XXXX.svg)](https://doi.org/)
 
 # Analyse results
 
