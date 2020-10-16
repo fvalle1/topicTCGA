@@ -1,13 +1,13 @@
 ![Docker Image CI](https://github.com/fvalle1/cancers/workflows/Docker%20Image%20CI/badge.svg)
+[![DOI](https://zenodo.org/badge/DOI/10.TBA/TBA.svg)](https://doi.org/TBA)
+
 
 # A Topic model analysis of TCGA transcriptomic data
-Notebooks for work "A Topic model analysis of TCGA transcriptomic data" submitted to Cancers [link]()
-[![DOI](https://zenodo.org/badge/DOI/10.XXXX/XXXX.svg)](https://doi.org/)
+Notebooks and libraries for "A Topic model analysis of TCGA transcriptomic data"
 
 # Analyse results
 
-To analyse results and reproduce plots in the paper without rerunning hSBM use the following notebook [hSBM_postprocess.ipynb](hSBM_postprocess.ipynb)
-
+In order to analyse results and reproduce plots in the paper without rerunning hSBM use the following notebook [hSBM_postprocess.ipynb](hSBM_postprocess.ipynb)
 
 This repository, following the structure of the paper, is divided into three parts. See *Readme.md* in each folder for a detailed description of the specific pipeline.
 
