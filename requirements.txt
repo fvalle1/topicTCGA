@@ -11,4 +11,5 @@ sklearn
 seaborn
 scipy
 numpy
--i https://test.pypi.org/simple/ topicpy==1.0.0
+--extra-index-url https://test.pypi.org/simple
+topicpy
