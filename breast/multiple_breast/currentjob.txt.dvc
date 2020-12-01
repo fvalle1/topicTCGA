@@ -1,0 +1,4 @@
+outs:
+- md5: 7dd773d69636964bd8a1859346988c18
+  size: 13
+  path: currentjob.txt
