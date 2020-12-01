@@ -139,3 +139,5 @@ unified_lung/data/
 *.csv
 *.dat
 *.svg
+Stability.ipynb
+*.RData
