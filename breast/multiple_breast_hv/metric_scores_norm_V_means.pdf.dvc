@@ -1,0 +1,4 @@
+outs:
+- md5: bf4e5ebbc3d85cd72c0ccd862be05b09
+  size: 12260
+  path: metric_scores_norm_V_means.pdf

@@ -1,0 +1,3 @@
+outs:
+- md5: 1df8638e5653aa52464d18c66433ffb3
+  path: graph_lung.xml.gz

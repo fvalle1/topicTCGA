@@ -1,0 +1,3 @@
+outs:
+- md5: 120afb1c7c7664c939ea0d935c4ccba7
+  path: metric_scores_norm_V_means.pdf

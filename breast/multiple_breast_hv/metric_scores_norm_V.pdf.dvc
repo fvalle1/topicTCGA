@@ -1,0 +1,4 @@
+outs:
+- md5: de3a7547208338e724d3f82b1c83ba8e
+  size: 18293
+  path: metric_scores_norm_V.pdf
