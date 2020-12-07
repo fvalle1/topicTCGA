@@ -141,3 +141,6 @@ unified_lung/data/
 *.svg
 Stability.ipynb
 *.RData
+files.txt
+manifest.txt
+unified_lung/topsbm/topsbm_level_0_labels.csv
