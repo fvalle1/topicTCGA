@@ -2,9 +2,12 @@
 [![DOI](https://zenodo.org/badge/DOI/10.TBA/TBA.svg)](https://doi.org/TBA)
 
 
-# A Topic model analysis of TCGA transcriptomic data
+# A topic model analysis of TCGA transcriptomic data of breast and lung cancer
 
-Notebooks and libraries for "A Topic model analysis of TCGA transcriptomic data"
+Notebooks and libraries for "A topic model analysis of TCGA transcriptomic data of breast and lung cancer"
+
+## Preprint
+"A topic model analysis of TCGA transcriptomic data" [![DOI](https://zenodo.org/badge/DOI/10.1101/2020.10.19.345694.svg)](https://doi.org/10.1101/2020.10.19.345694)
 
 # Analyse results
 
