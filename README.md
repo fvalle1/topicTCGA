@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.3390/cancers12123799.svg)](https://doi.org/10.3390/cancers12123799)
 
 
-# A topic model analysis of TCGA transcriptomic data of breast and lung cancer
+# A topic model analysis of TCGA
 
 Notebooks and libraries for "[A Topic Modeling Analysis of TCGA Breast and Lung Cancer Transcriptomic Data](https://www.mdpi.com/2072-6694/12/12/3799#)"
 
