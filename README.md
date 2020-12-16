@@ -1,13 +1,10 @@
 ![Docker Image CI](https://github.com/fvalle1/cancers/workflows/Docker%20Image%20CI/badge.svg)
-[![DOI](https://zenodo.org/badge/DOI/10.TBA/TBA.svg)](https://doi.org/TBA)
+[![DOI](https://zenodo.org/badge/DOI/10.3390/cancers12123799.svg)](https://doi.org/10.3390/cancers12123799)
 
 
 # A topic model analysis of TCGA transcriptomic data of breast and lung cancer
 
-Notebooks and libraries for "A topic model analysis of TCGA transcriptomic data of breast and lung cancer"
-
-## Preprint
-"A topic model analysis of TCGA transcriptomic data" [![DOI](https://zenodo.org/badge/DOI/10.1101/2020.10.19.345694.svg)](https://doi.org/10.1101/2020.10.19.345694)
+Notebooks and libraries for "[A Topic Modeling Analysis of TCGA Breast and Lung Cancer Transcriptomic Data](https://www.mdpi.com/2072-6694/12/12/3799#)"
 
 # Analyse results
 
