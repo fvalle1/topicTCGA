@@ -41,7 +41,7 @@ The [run_graph.ipynb](run_graph.ipynb) notebook can be used to run hierarchical 
 # Data
 The data processed in our analysis when not available trough git can be accessed via [DataVersionControl](https://dvc.org)
 ```bash
-dvc pull -r mydrive
+dvc pull -r mydrive name_of_the_file_to_download.dvc
 ```
 
 # License
